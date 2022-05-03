@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VisualStudio Projects\\Client\\Client.csproj",
+      "projectUniqueName": "D:\\GitHubRepositories\\Dedicated-Server-Client\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "D:\\VisualStudio Projects\\Client\\Client.csproj",
+      "projectPath": "D:\\GitHubRepositories\\Dedicated-Server-Client\\Client\\Client.csproj",
       "packagesPath": "C:\\Users\\Max Kayzer\\.nuget\\packages\\",
-      "outputPath": "D:\\VisualStudio Projects\\Client\\obj\\",
+      "outputPath": "D:\\GitHubRepositories\\Dedicated-Server-Client\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Max Kayzer\\AppData\\Roaming\\NuGet\\NuGet.Config",

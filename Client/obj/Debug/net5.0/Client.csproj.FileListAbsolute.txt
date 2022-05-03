@@ -14,3 +14,19 @@ D:\VisualStudio Projects\Client\obj\Debug\net5.0\Client.dll
 D:\VisualStudio Projects\Client\obj\Debug\net5.0\ref\Client.dll
 D:\VisualStudio Projects\Client\obj\Debug\net5.0\Client.pdb
 D:\VisualStudio Projects\Client\obj\Debug\net5.0\Client.genruntimeconfig.cache
+D:\GitHubRepositories\Dedicated-Server-Client\Client\bin\Debug\net5.0\Client.exe
+D:\GitHubRepositories\Dedicated-Server-Client\Client\bin\Debug\net5.0\Client.deps.json
+D:\GitHubRepositories\Dedicated-Server-Client\Client\bin\Debug\net5.0\Client.runtimeconfig.json
+D:\GitHubRepositories\Dedicated-Server-Client\Client\bin\Debug\net5.0\Client.runtimeconfig.dev.json
+D:\GitHubRepositories\Dedicated-Server-Client\Client\bin\Debug\net5.0\Client.dll
+D:\GitHubRepositories\Dedicated-Server-Client\Client\bin\Debug\net5.0\ref\Client.dll
+D:\GitHubRepositories\Dedicated-Server-Client\Client\bin\Debug\net5.0\Client.pdb
+D:\GitHubRepositories\Dedicated-Server-Client\Client\obj\Debug\net5.0\Client.csproj.AssemblyReference.cache
+D:\GitHubRepositories\Dedicated-Server-Client\Client\obj\Debug\net5.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHubRepositories\Dedicated-Server-Client\Client\obj\Debug\net5.0\Client.AssemblyInfoInputs.cache
+D:\GitHubRepositories\Dedicated-Server-Client\Client\obj\Debug\net5.0\Client.AssemblyInfo.cs
+D:\GitHubRepositories\Dedicated-Server-Client\Client\obj\Debug\net5.0\Client.csproj.CoreCompileInputs.cache
+D:\GitHubRepositories\Dedicated-Server-Client\Client\obj\Debug\net5.0\Client.dll
+D:\GitHubRepositories\Dedicated-Server-Client\Client\obj\Debug\net5.0\ref\Client.dll
+D:\GitHubRepositories\Dedicated-Server-Client\Client\obj\Debug\net5.0\Client.pdb
+D:\GitHubRepositories\Dedicated-Server-Client\Client\obj\Debug\net5.0\Client.genruntimeconfig.cache

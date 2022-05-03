@@ -17,8 +17,7 @@ namespace Client
             Thread mainThread = new Thread(new ThreadStart(MainThread));
             mainThread.Start();
 
-            Client client = new Client();
-            client.ConnectToServer();
+            Client.Instance.ConnectToServer();
         }
 
         private static void MainThread()
@@ -30,7 +29,7 @@ namespace Client
             {
                 while (_nextLoop < DateTime.Now)
                 {
-                    //UPDATE
+                    ThreadManager.UpdateMain();
 
                     _nextLoop = _nextLoop.AddMilliseconds(Constants.MS_PER_TICK);
 

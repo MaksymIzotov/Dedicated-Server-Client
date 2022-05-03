@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LSKkQ/KTu86TqjKdplYH2wVmaj2w63fThq2EIit3gOASHR2DrkK4kPl67Fo0r1lTa/+fISuyCHKy7o7YX6Rt8A==",
+  "dgSpecHash": "m6Oc2ZYGArUsxNNIyRQsCgD/6JgZzoHAWTn40P18omziKSY3tbq/hvWHJ6zwHrQUCR2+q07csIZxLia8AdHESg==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudio Projects\\Client\\Client.csproj",
+  "projectFilePath": "D:\\GitHubRepositories\\Dedicated-Server-Client\\Client\\Client.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
