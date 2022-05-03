@@ -11,6 +11,7 @@ namespace Client
     public enum ServerPackets
     {
         welcome = 1,
+        message,
         spawnPlayer,
         playerPosition,
         playerRotation
@@ -20,7 +21,7 @@ namespace Client
     public enum ClientPackets
     {
         welcomeReceived = 1,
-        playerMovement
+        playerMessage
     }
 
     public class Packet : IDisposable

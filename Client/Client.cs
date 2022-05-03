@@ -179,7 +179,8 @@ namespace Client
         {
             packetHandlers = new Dictionary<int, PacketHandler>()
         {
-            { (int)ServerPackets.welcome, ClientHandle.Welcome }
+            { (int)ServerPackets.welcome, ClientHandle.Welcome },
+                { (int)ClientPackets.playerMessage, ClientHandle.MessageReceived}
         };
             Console.WriteLine("Initialized packets.");
         }

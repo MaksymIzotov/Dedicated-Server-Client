@@ -25,6 +25,17 @@ namespace Client
                 SendTCPData(_packet);
             }
         }
+
+        public static void SendMessage(string _msg, string _username)
+        {
+            using (Packet _packet = new Packet((int)ClientPackets.playerMessage))
+            {
+                _packet.Write(_msg);
+                _packet.Write(_username);
+
+                SendTCPData(_packet);
+            }
+        }
         #endregion
     }
 }
