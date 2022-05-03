@@ -8,7 +8,6 @@ namespace Client
     class Program
     {
         private static bool isRunning = false;
-        private static string username;
 
         static void Main(string[] args)
         {
@@ -16,7 +15,7 @@ namespace Client
             isRunning = true;
 
             Console.WriteLine("Username: ");
-            username = Console.ReadLine();
+            Client.Instance.username = Console.ReadLine();
 
             Thread mainThread = new Thread(new ThreadStart(MainThread));
             mainThread.Start();
@@ -71,7 +70,7 @@ namespace Client
 
 
                     //Send message
-                    ClientSend.SendMessage(message, username);
+                    ClientSend.SendMessage(message, Client.Instance.username);
 
                     _nextLoop = _nextLoop.AddMilliseconds(Constants.MS_PER_TICK);
 

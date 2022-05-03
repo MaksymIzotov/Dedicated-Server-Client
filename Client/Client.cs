@@ -41,6 +41,7 @@ namespace Client
         public static string ip = "127.0.0.1";
         public static int port = 27010;
         public int myId = 0;
+        public string username = "";
         public TCP tcp;
 
         public void ConnectToServer()

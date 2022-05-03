@@ -20,7 +20,7 @@ namespace Client
             using (Packet _packet = new Packet((int)ClientPackets.welcomeReceived))
             {
                 _packet.Write(Client.Instance.myId);
-                _packet.Write("Maxos");
+                _packet.Write(Client.Instance.username);
 
                 SendTCPData(_packet);
             }
