@@ -8,6 +8,9 @@ namespace Client
 {
     class ClientHandle
     {
+        private static int initialCursorTop;
+        private static int initialCursorLeft;
+
         public static void Welcome(Packet _packet)
         {
             string _msg = _packet.ReadString();
@@ -15,8 +18,6 @@ namespace Client
 
             Console.WriteLine($"Message from server: {_msg}");
             Client.Instance.myId = _myId;
-
-            AddLine();
 
             ClientSend.WelcomeReceived();
         }
@@ -26,20 +27,21 @@ namespace Client
             string _msg = _packet.ReadString();
             string _username = _packet.ReadString();
 
-            Console.WriteLine($"{_username}: {_msg}");
-
-            AddLine();
+            AddLine(_msg, _username);
         }
 
-        private static void AddLine()
+        private static void AddLine(string _msg, string _username)
         {
-            int initialCursorTop = Console.CursorTop;
-            int initialCursorLeft = Console.CursorLeft;
+            initialCursorTop = Console.CursorTop;
+            initialCursorLeft = Console.CursorLeft;
 
             Console.MoveBufferArea(0, initialCursorTop, Console.WindowWidth,
                 1, 0, initialCursorTop + 1);
             Console.CursorTop = initialCursorTop;
             Console.CursorLeft = 0;
+
+            Console.WriteLine($"{_username}: {_msg}");
+
             Console.CursorTop = initialCursorTop + 1;
             Console.CursorLeft = initialCursorLeft;
         }
