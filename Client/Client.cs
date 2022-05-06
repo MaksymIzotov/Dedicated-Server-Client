@@ -38,7 +38,7 @@ namespace Client
 
         public static int dataBufferSize = 4096;
 
-        public static string ip = "127.0.0.1";
+        public static string ip = "192.168.56.1";
         public static int port = 27010;
         public int myId = 0;
         public string username = "";
