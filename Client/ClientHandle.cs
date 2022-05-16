@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Client
 {
@@ -19,7 +20,7 @@ namespace Client
             Console.WriteLine($"Message from server: {_msg}");
             Client.Instance.myId = _myId;
 
-            ClientSend.WelcomeReceived();
+            ClientSend.SendEmail();
         }
 
         public static void MessageReceived(Packet _packet)
@@ -28,6 +29,24 @@ namespace Client
             string _username = _packet.ReadString();
 
             AddLine(_msg, _username);
+        }
+
+        public static void OTPReceived(Packet _packet)
+        {
+            int _apr = _packet.ReadInt();
+
+            if (_apr == 1)
+            {
+                AddLine("Success", "Server");
+
+                Program.StartInputThread();
+                ClientSend.WelcomeReceived();
+            }
+            else
+            {
+                AddLine("Wrong", "Server");
+                Program.OTPCheck();
+            }
         }
 
         private static void AddLine(string _msg, string _username)

@@ -42,6 +42,7 @@ namespace Client
         public static int port = 27010;
         public int myId = 0;
         public string username = "";
+        public string email = "";
         public TCP tcp;
 
         public void ConnectToServer()
@@ -181,7 +182,8 @@ namespace Client
             packetHandlers = new Dictionary<int, PacketHandler>()
         {
             { (int)ServerPackets.welcome, ClientHandle.Welcome },
-                { (int)ClientPackets.playerMessage, ClientHandle.MessageReceived}
+                { (int)ServerPackets.message, ClientHandle.MessageReceived},
+                { (int)ClientPackets.otpReceived, ClientHandle.OTPReceived}
         };
             Console.WriteLine("Initialized packets.");
         }

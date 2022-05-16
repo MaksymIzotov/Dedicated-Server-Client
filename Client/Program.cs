@@ -9,21 +9,80 @@ namespace Client
     {
         private static bool isRunning = false;
 
+        private static bool isAuth = false;
+
         static void Main(string[] args)
         {
             Console.Title = "Client";
             isRunning = true;
+            isAuth = false;
 
             Console.WriteLine("Username: ");
             Client.Instance.username = Console.ReadLine();
+            Console.WriteLine("Email: ");
+            Client.Instance.email = Console.ReadLine();
+
+            Client.Instance.ConnectToServer();
 
             Thread mainThread = new Thread(new ThreadStart(MainThread));
             mainThread.Start();
 
+            OTPCheck();
+        }
+
+        public static void StartInputThread()
+        {
             Thread inputThread = new Thread(new ThreadStart(InputThread));
             inputThread.Start();
+        }
 
-            Client.Instance.ConnectToServer();
+        public static void OTPCheck()
+        {
+            Console.WriteLine("One-Time-Password: ");
+            string otp = Console.ReadLine();
+
+            try
+            {
+                ClientSend.SendOTP(Convert.ToInt32(otp));
+            }
+            catch
+            {
+                Console.WriteLine("Wrong Input");
+            }
+        }
+
+        private static void InputThread()
+        {
+            DateTime _nextLoop = DateTime.Now;
+
+            while (isRunning)
+            {
+                while (_nextLoop < DateTime.Now)
+                {
+                        string message = Console.ReadLine();
+
+                        // Delete input text
+                        int linesOfInput = 1 + (message.Length / Console.BufferWidth);
+                        //Move cursor to just before the input just entered
+                        Console.CursorTop -= linesOfInput;
+                        Console.CursorLeft = 0;
+                        //blank out the content that was just entered
+                        Console.WriteLine(new string(' ', message.Length));
+                        //move the cursor to just before the input was just entered
+                        Console.CursorTop -= linesOfInput;
+                        Console.CursorLeft = 0;
+
+                        //Send message
+                        ClientSend.SendMessage(message, Client.Instance.username);
+
+                    _nextLoop = _nextLoop.AddMilliseconds(Constants.MS_PER_TICK);
+
+                    if (_nextLoop > DateTime.Now)
+                    {
+                        Thread.Sleep(_nextLoop - DateTime.Now);
+                    }
+                }
+            }
         }
 
         private static void MainThread()
@@ -45,41 +104,6 @@ namespace Client
                     }
                 }
             }
-        }
-
-        private static void InputThread()
-        {
-            DateTime _nextLoop = DateTime.Now;
-
-            while (isRunning)
-            {
-                while (_nextLoop < DateTime.Now)
-                {
-                    string message = Console.ReadLine();
-
-                    // Delete input text
-                    int linesOfInput = 1 + (message.Length / Console.BufferWidth);
-                    //Move cursor to just before the input just entered
-                    Console.CursorTop -= linesOfInput;
-                    Console.CursorLeft = 0;
-                    //blank out the content that was just entered
-                    Console.WriteLine(new string(' ', message.Length));
-                    //move the cursor to just before the input was just entered
-                    Console.CursorTop -= linesOfInput;
-                    Console.CursorLeft = 0;
-
-
-                    //Send message
-                    ClientSend.SendMessage(message, Client.Instance.username);
-
-                    _nextLoop = _nextLoop.AddMilliseconds(Constants.MS_PER_TICK);
-
-                    if (_nextLoop > DateTime.Now)
-                    {
-                        Thread.Sleep(_nextLoop - DateTime.Now);
-                    }
-                }
-            }
-        }
+        }       
     }
 }

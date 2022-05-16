@@ -12,6 +12,8 @@ namespace Client
     {
         welcome = 1,
         message,
+        otpReceived,
+        emailReceived,
         spawnPlayer,
         playerPosition,
         playerRotation
@@ -21,7 +23,8 @@ namespace Client
     public enum ClientPackets
     {
         welcomeReceived = 1,
-        playerMessage
+        playerMessage,
+        otpReceived
     }
 
     public class Packet : IDisposable

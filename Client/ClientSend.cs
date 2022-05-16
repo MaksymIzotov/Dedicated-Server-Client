@@ -26,6 +26,28 @@ namespace Client
             }
         }
 
+        public static void SendOTP(int otp)
+        {
+            using (Packet _packet = new Packet((int)ServerPackets.otpReceived))
+            {
+                _packet.Write(otp);
+                _packet.Write(Client.Instance.username);
+
+                SendTCPData(_packet);
+            }
+        }
+
+        public static void SendEmail()
+        {
+            using (Packet _packet = new Packet((int)ServerPackets.emailReceived))
+            {
+                _packet.Write(Client.Instance.email);
+                _packet.Write(Client.Instance.username);
+
+                SendTCPData(_packet);
+            }
+        }
+
         public static void SendMessage(string _msg, string _username)
         {
             using (Packet _packet = new Packet((int)ClientPackets.playerMessage))
