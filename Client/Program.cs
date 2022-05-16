@@ -58,21 +58,22 @@ namespace Client
             {
                 while (_nextLoop < DateTime.Now)
                 {
-                        string message = Console.ReadLine();
+                    string message = Console.ReadLine();
 
-                        // Delete input text
-                        int linesOfInput = 1 + (message.Length / Console.BufferWidth);
-                        //Move cursor to just before the input just entered
-                        Console.CursorTop -= linesOfInput;
-                        Console.CursorLeft = 0;
-                        //blank out the content that was just entered
-                        Console.WriteLine(new string(' ', message.Length));
-                        //move the cursor to just before the input was just entered
-                        Console.CursorTop -= linesOfInput;
-                        Console.CursorLeft = 0;
+                    // Delete input text
+                    int linesOfInput = 1 + (message.Length / Console.BufferWidth);
+                    //Move cursor to just before the input just entered
+                    Console.CursorTop -= linesOfInput;
+                    Console.CursorLeft = 0;
+                    //blank out the content that was just entered
+                    Console.WriteLine(new string(' ', message.Length));
+                    //move the cursor to just before the input was just entered
+                    Console.CursorTop -= linesOfInput;
+                    Console.CursorLeft = 0;
 
-                        //Send message
-                        ClientSend.SendMessage(message, Client.Instance.username);
+                    Console.WriteLine(Client.Instance.username + ": " + message);
+                    //Send message
+                    ClientSend.SendMessage(message, Client.Instance.username);
 
                     _nextLoop = _nextLoop.AddMilliseconds(Constants.MS_PER_TICK);
 

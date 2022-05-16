@@ -20,8 +20,8 @@ namespace Client
             Console.WriteLine($"Message from server: {_msg}");
             Client.Instance.myId = _myId;
 
-            Program.OTPCheck();
             ClientSend.SendEmail();
+            Program.OTPCheck();
         }
 
         public static void MessageReceived(Packet _packet)
