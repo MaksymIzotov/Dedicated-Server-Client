@@ -26,8 +26,6 @@ namespace Client
 
             Thread mainThread = new Thread(new ThreadStart(MainThread));
             mainThread.Start();
-
-            OTPCheck();
         }
 
         public static void StartInputThread()
@@ -48,6 +46,7 @@ namespace Client
             catch
             {
                 Console.WriteLine("Wrong Input");
+                OTPCheck();
             }
         }
 
